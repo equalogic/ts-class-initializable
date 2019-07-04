@@ -1,0 +1,70 @@
+version: 2.1
+
+executors:
+  nodejs:
+    docker:
+      - image: circleci/node:10.15
+    working_directory: ~/repo
+
+jobs:
+  install:
+    executor: nodejs
+    steps:
+      - checkout
+      - run:
+          name: Configuring NPM authentication
+          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+  lint:
+    executor: nodejs
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+      - run: npm run lint
+  test:
+    executor: nodejs
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+      - run: npm test
+  build:
+    executor: nodejs
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+      - run: npm run build
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - dist
+
+workflows:
+  version: 2
+
+  "Test-Build":
+    jobs:
+      - install
+      - lint:
+          requires:
+            - install
+      - test:
+          requires:
+            - install
+      - build:
+          requires:
+            - install
