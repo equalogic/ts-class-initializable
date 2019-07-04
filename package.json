@@ -1,0 +1,43 @@
+{
+  "name": "@madsci/ts-class-initializable",
+  "version": "1.0.0",
+  "description": "TypeScript abstract class enabling instance initialization from a plain object",
+  "author": "Madscience Ltd",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/madscience/ts-class-initializable"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "format": "prettier --write \"**/*.ts\"",
+    "lint": "eslint --ext .ts --ignore-path .gitignore .",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^24.0.12",
+    "@types/node": "^12.0.4",
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^5.0.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^24.7.1",
+    "prettier": "^1.17.1",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.4.5"
+  },
+  "main": "index.js",
+  "np": {
+    "publish": false,
+    "yarn": false
+  }
+}

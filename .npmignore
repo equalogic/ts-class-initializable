@@ -1,0 +1,8 @@
+.git/
+.bit/
+.bitmap
+bits/
+.idea/
+.semaphore/
+**/node_modules/
+**/package-lock.json
