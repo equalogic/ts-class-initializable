@@ -48,10 +48,6 @@ jobs:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
       - run: npm run build
-      - persist_to_workspace:
-          root: ~/repo
-          paths:
-            - dist
 
 workflows:
   version: 2
