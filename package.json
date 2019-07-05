@@ -4,6 +4,9 @@
   "description": "TypeScript abstract class enabling instance initialization from a plain object",
   "author": "Madscience Ltd",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/madscience/ts-class-initializable"
@@ -38,6 +41,7 @@
   "main": "index.js",
   "np": {
     "publish": false,
-    "yarn": false
+    "yarn": false,
+    "cleanup": false
   }
 }
