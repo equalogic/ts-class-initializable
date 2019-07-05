@@ -1,6 +1,6 @@
 {
   "name": "@madsci/ts-class-initializable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TypeScript abstract class enabling instance initialization from a plain object",
   "author": "Madscience Ltd",
   "license": "MIT",
