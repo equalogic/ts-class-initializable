@@ -1,3 +1,12 @@
+# reusable config stanzas
+only-release-tags: &only-release-tags
+  filters:
+    tags:
+      only: /v[0-9]+\.[0-9]+\.[0-9]+.*/
+    branches:
+      ignore: /.*/
+
+# start of config
 version: 2.1
 
 executors:
@@ -52,7 +61,7 @@ jobs:
           root: ~/repo
           paths:
             - ./
-  release:
+  publish:
     executor: nodejs
     steps:
       - attach_workspace:
@@ -65,7 +74,7 @@ jobs:
 workflows:
   version: 2
 
-  "Test-Build":
+  Test:
     jobs:
       - install
       - lint:
@@ -77,13 +86,26 @@ workflows:
       - build:
           requires:
             - install
-      - release:
+
+  Release:
+    jobs:
+      - install:
+          <<: *only-release-tags
+      - lint:
+          <<: *only-release-tags
+          requires:
+            - install
+      - test:
+          <<: *only-release-tags
+          requires:
+            - install
+      - build:
+          <<: *only-release-tags
+          requires:
+            - install
+      - publish:
+          <<: *only-release-tags
           requires:
             - lint
             - test
             - build
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /v[0-9]+\.[0-9]+\.[0-9]+.*/
