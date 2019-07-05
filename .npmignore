@@ -1,8 +1,7 @@
-.git/
-.bit/
-.bitmap
-bits/
-.idea/
-.semaphore/
-**/node_modules/
-**/package-lock.json
+node_modules/
+src/
+.*
+jest.config.js
+package-lock.json
+tsconfig.json
+tsconfig.build.json
