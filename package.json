@@ -34,7 +34,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "jest": "^24.7.1",
     "prettier": "^1.17.1",
-    "rimraf": "^2.6.3",
+    "rimraf": "^3.0.0",
     "ts-jest": "^24.0.2",
     "typescript": "^3.4.5"
   },
