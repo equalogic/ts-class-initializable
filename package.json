@@ -19,6 +19,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "postversion": "npm run postbuild",
+    "release": "np"
   },
   "dependencies": {},
   "devDependencies": {
@@ -40,10 +41,5 @@
     "ts-jest": "^25.0.0",
     "typescript": "^3.4.5"
   },
-  "main": "index.js",
-  "np": {
-    "publish": false,
-    "yarn": false,
-    "cleanup": false
-  }
+  "main": "index.js"
 }
