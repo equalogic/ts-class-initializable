@@ -13,10 +13,12 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "format": "prettier --write \"**/*.ts\"",
+    "postbuild": "cp package.json README.md dist/",
     "lint": "eslint --ext .ts --ignore-path .gitignore .",
+    "lint:fix": "eslint --ext .ts --ignore-path .gitignore . --fix",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "postversion": "npm run postbuild",
   },
   "dependencies": {},
   "devDependencies": {

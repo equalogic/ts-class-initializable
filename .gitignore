@@ -1,7 +1,5 @@
 # Build files
-*.d.ts
-*.js
-*.js.map
+dist/
 
 # Include some configs
 !*.config.js
