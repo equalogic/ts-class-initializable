@@ -38,12 +38,22 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
+    "husky": "4.2.5",
     "jest": "^25.1.0",
+    "lint-staged": "10.2.11",
     "prettier": "^2.0.2",
     "rimraf": "^3.0.0",
     "ts-jest": "^25.0.0",
     "typescript": "^3.4.5"
   },
   "main": "index.js",
-  "types": "index.d.ts"
+  "types": "index.d.ts",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run barrels:generate && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,js}": "eslint --cache --fix"
+  }
 }
