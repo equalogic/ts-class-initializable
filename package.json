@@ -44,5 +44,6 @@
     "ts-jest": "^25.0.0",
     "typescript": "^3.4.5"
   },
-  "main": "index.js"
+  "main": "index.js",
+  "types": "index.d.ts"
 }
