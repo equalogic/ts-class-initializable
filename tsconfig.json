@@ -13,7 +13,7 @@
     "sourceMap": true,
     "preserveConstEnums": true,
     "strictNullChecks": true,
-    "outDir": "./",
+    "outDir": "./dist",
     "rootDir": "./src",
     "baseUrl": "./",
     "paths": {
