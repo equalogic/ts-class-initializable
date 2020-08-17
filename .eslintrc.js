@@ -8,48 +8,85 @@ module.exports = {
   },
   extends: [
     'plugin:@typescript-eslint/recommended',
-    // 'plugin:prettier/recommended',
-    // 'prettier',
+    'plugin:prettier/recommended',
+    'prettier',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
   ],
-  plugins: [
-    '@typescript-eslint',
-    // 'prettier',
-  ],
+  plugins: ['@typescript-eslint', 'prettier', 'import'],
+  settings: {
+    'import/resolver': {
+      // use <root>/tsconfig.json
+      typescript: {
+        alwaysTryTypes: true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+      },
+    },
+  },
   // add your custom rules here
   rules: {
-    'semi': ['error', 'always'],
+    semi: ['error', 'always'],
     'comma-dangle': ['error', 'always-multiline'],
-    'arrow-parens': ['error', 'as-needed', {
-      requireForBlockBody: false,
-    }],
-    'no-multiple-empty-lines': ['error', {
-      max: 1,
-      maxEOF: 0,
-      maxBOF: 0,
-    }],
-    'indent': 'off',
-    '@typescript-eslint/indent': ['error', 2, {
-      'CallExpression': {
-        arguments: 1,
+    'arrow-parens': [
+      'error',
+      'as-needed',
+      {
+        requireForBlockBody: false,
       },
-      'MemberExpression': 1,
-      'SwitchCase': 1,
-    }],
+    ],
+    'no-multiple-empty-lines': [
+      'error',
+      {
+        max: 1,
+        maxEOF: 0,
+        maxBOF: 0,
+      },
+    ],
+    indent: 'off',
+    '@typescript-eslint/indent': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-inferrable-types': 'off',
     'no-useless-constructor': 'off',
     '@typescript-eslint/no-useless-constructor': 'off',
     '@typescript-eslint/no-parameter-properties': 'off',
-    '@typescript-eslint/no-object-literal-type-assertion': ['error', {
-      allowAsParameter: true,
-    }],
-    '@typescript-eslint/no-unused-vars': ['warn', {
-      argsIgnorePattern: '^_',
-    }],
-    '@typescript-eslint/explicit-function-return-type': ['warn', {
-      allowExpressions: true,
-    }],
-    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/consistent-type-assertions': [
+      'error',
+      {
+        assertionStyle: 'as',
+        objectLiteralTypeAssertions: 'allow-as-parameter',
+      },
+    ],
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      {
+        argsIgnorePattern: '^_',
+      },
+    ],
+    '@typescript-eslint/explicit-function-return-type': [
+      'warn',
+      {
+        allowExpressions: true,
+      },
+    ],
+    'import/order': [
+      'error',
+      {
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+        pathGroups: [
+          {
+            pattern: '~/**',
+            group: 'internal',
+            position: 'before',
+          },
+        ],
+      },
+    ],
+    'import/default': 'off',
+    'import/named': 'off',
+    'import/no-named-as-default-member': 'off',
   },
   overrides: [
     {
