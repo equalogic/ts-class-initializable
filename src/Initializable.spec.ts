@@ -5,33 +5,25 @@ import {
   PartiallyInitializable,
 } from './Initializable';
 
-class InitializableExampleClass extends Initializable<
-  InitializableExampleClass
-> {
+class InitializableExampleClass extends Initializable<InitializableExampleClass> {
   public foo: string;
   public bar: number;
   public optional?: boolean;
 }
 
-class OptionallyInitializableExampleClass extends OptionallyInitializable<
-  OptionallyInitializableExampleClass
-> {
+class OptionallyInitializableExampleClass extends OptionallyInitializable<OptionallyInitializableExampleClass> {
   public foo: string;
   public bar: number;
   public optional?: boolean;
 }
 
-class PartiallyInitializableExampleClass extends PartiallyInitializable<
-  PartiallyInitializableExampleClass
-> {
+class PartiallyInitializableExampleClass extends PartiallyInitializable<PartiallyInitializableExampleClass> {
   public foo: string;
   public bar: number;
   public optional?: boolean;
 }
 
-class OptionallyPartiallyInitializableExampleClass extends OptionallyPartiallyInitializable<
-  OptionallyPartiallyInitializableExampleClass
-> {
+class OptionallyPartiallyInitializableExampleClass extends OptionallyPartiallyInitializable<OptionallyPartiallyInitializableExampleClass> {
   public foo: string;
   public bar: number;
   public optional?: boolean;
