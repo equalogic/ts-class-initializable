@@ -1,15 +1,15 @@
 {
-  "name": "@madsci/ts-class-initializable",
+  "name": "ts-class-initializable",
   "version": "1.0.1",
   "description": "TypeScript abstract class enabling instance initialization from a plain object",
-  "author": "Madscience Ltd",
+  "author": "Equalogic Ltd",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/madscience/ts-class-initializable"
+    "url": "https://github.com/equalogic/ts-class-initializable"
   },
   "scripts": {
     "prebuild": "rimraf dist && npm run barrels:generate",
