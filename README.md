@@ -1,7 +1,7 @@
 # ts-class-initializable
 
 A small helper to enable class instance property initialization from a plain object.
- 
+
 Extend one of the `Initializable` classes and your class constructor will accept a
 plain object literal as its first argument, and assign the values to instance properties.
 
@@ -20,7 +20,7 @@ const instance: Foo = new Foo({
 });
 
 console.log(instance.bar); // 'foobar'
-``` 
+```
 
 #### Classes
 
