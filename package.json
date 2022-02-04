@@ -22,7 +22,7 @@
     "test:watch": "jest --watch",
     "postversion": "npm run postbuild",
     "barrels:generate": "barrelsby --config barrelsby.json",
-    "release": "np"
+    "release": "np --contents dist/"
   },
   "dependencies": {},
   "devDependencies": {
