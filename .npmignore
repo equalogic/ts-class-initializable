@@ -1,7 +1,9 @@
 node_modules/
 src/
 .*
+barrelsby.json
 jest.config.js
 package-lock.json
+renovate.json
 tsconfig.json
 tsconfig.build.json
