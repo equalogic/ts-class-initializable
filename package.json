@@ -27,7 +27,7 @@
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "27.5.1",
-    "@types/node": "14.18.18",
+    "@types/node": "14.18.20",
     "@typescript-eslint/eslint-plugin": "5.27.0",
     "@typescript-eslint/parser": "5.27.0",
     "barrelsby": "2.3.4",
