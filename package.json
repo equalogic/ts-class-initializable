@@ -41,7 +41,7 @@
     "prettier": "3.2.2",
     "rimraf": "5.0.7",
     "ts-jest": "27.1.5",
-    "typescript": "5.4.5"
+    "typescript": "5.5.2"
   },
   "main": "index.js",
   "types": "index.d.ts"
